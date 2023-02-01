@@ -1,0 +1,80 @@
+<div style=" margin-top: 20px;" fxLayout="row">
+    <div fxFlex="15">
+        <div fxLayout="column">
+            <div fxLayoutAlign="end end">
+                <mat-icon style="margin-right: 5px;">menu</mat-icon>
+            </div>
+            <div fxLayoutAlign="end " class="container">
+                <mat-icon class="ic-grp">group</mat-icon>
+                <p class="user"> User </p>
+            </div>
+        </div>
+    </div>
+    <div class="table-box" fxFlex>
+        <div fxLayout="column">
+            <div fxLayout="row" fxLayoutAlign=" center" style="background-color: rgb(255, 255, 255);">
+                <div fxFlex="70%">
+
+                </div>
+                <div fxFlex="22%" class="exam">    
+                    <mat-accordion>
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                <mat-panel-description>
+                                  <div class="es">ES </div>&nbsp; Exam System Admin
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+            </div>
+
+            <div class="table-head" fxLayout="row">
+                <div fxFlex="62%">
+                    <h3>Users</h3>
+                </div>
+                <div fxFlex="33%">
+                    <div fxLayout="row" fxLayoutGap="2px">
+                        <div fxFlex="10%">
+                            <mat-icon class="srch3">search</mat-icon>
+                        </div>
+                        <div fxFlex="57%" >
+                            <input  class="srch place" placeholder="Search" />
+                        </div>
+                        <div>
+                            <mat-icon class="srch1">filter_list</mat-icon>
+                        </div>
+                        <div>
+                            <button routerLink="user/add" style="color: white;" mat-button class="crt"> Create user</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <table class="table">
+                    <thead >
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Date Of Birth</th>
+                        <th>City</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th></th>
+                    </thead>
+                    <tbody >
+                        <tr *ngFor="let user of users" >
+                            <td>{{ user.fname }} {{ user.lname }}</td>
+                            <td>{{ user.gender }}</td>
+                            <td>{{ user.date }}</td>
+                            <td>{{ user.city }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.phone }}</td>
+                            <td><button (click)="onDelete(user.id)">X</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
